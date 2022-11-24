@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react';
 import { Input, Avatar, Button, Table} from 'antd';
 import {Link} from 'react-router-dom';
 
+
+/***
+ * Get Album data by searching a artist
+ * @returns {JSX.Element}
+ */
 function AlbumComposant(){
 
   const [searchInput, setSearchInput] = useState("");
@@ -46,6 +51,11 @@ function AlbumComposant(){
       
   }
 
+  /**
+   * function to add key index in tabs
+   * @param tab
+   * @returns new tab with index key
+   */
   const mapdata = (tab) =>{
     for(var i = 0;i<tab.length;i++){
       Object.assign(tab[i],{'key':i})
@@ -53,13 +63,20 @@ function AlbumComposant(){
     return tab
   }
 
-
-
+  /**
+   * Function to select an image among images array in tab
+   * @param images
+   * @returns {JSX.Element|null}
+   */
   const renderimages= (images) => {
     if(images[0]){return <Avatar src={images[0].url} />}
-    else{return null}
+      else{return null}
     }
 
+  /**
+   * Columns of antd Table
+   * @type {[{dataIndex: string, title: string, render: (function(*=): JSX.Element|null), key: string}, {dataIndex: string, title: string, render: (function(*)), key: string}, {dataIndex: string, title: string, key: string}, {dataIndex: string, title: string, key: string}, {dataIndex: string, title: string, key: string}]}
+   */
   const columns = [
     {
       title:'Album',
@@ -68,12 +85,18 @@ function AlbumComposant(){
       render: (item)=>renderimages(item)
     },
     {
+      title:"Link",
+      dataIndex:"id",
+      key:"id",
+      render: (item) => <Link to={item}>Go to tracks</Link>
+    },
+    {
       title:"Name",
       dataIndex:'name',
       key:'name',
-      render: (item) => <Link to={item}>{item}</Link>
   },
-  {
+
+    {
     title:"Date",
     dataIndex:'release_date',
     key:'release_date'
@@ -84,7 +107,7 @@ function AlbumComposant(){
     key:'tracks'
   }
   ];
-  
+
   return (
     
     <div className="mt-16">
@@ -107,3 +130,4 @@ function AlbumComposant(){
 }
 
 export default AlbumComposant;
+

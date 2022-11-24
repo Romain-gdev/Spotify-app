@@ -7,6 +7,7 @@ import PageAccueil from './pages/PageAccueil'
 import PageAlbums from './pages/PageAlbums'
 import PageInfo from './pages/PageAlbumInfo'
 
+
 /**
  * Creation des routes de l'application
  * { PageAccueil } L'accueil de notre page

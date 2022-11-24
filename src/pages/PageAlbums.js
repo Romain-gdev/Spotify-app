@@ -1,6 +1,6 @@
 import '../style/App.css';
 
-import AlbumComposant from '../composant/Composant'
+import AlbumComposant from '../composant/ComposantAlbum'
 
 function PageAlbums(){
 
