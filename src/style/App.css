@@ -1,0 +1,8 @@
+@import '~antd/dist/antd';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #F0F0F5
+}
