@@ -17,7 +17,7 @@ _To search an Album, enter artist's name_
 >Then click on your desirated Album
 * You go to this link
 ```
-https://yourlocalhosturl/search/AlbumId
+https://yourlocalhosturl/search/{AlbumId}
 ```
 >You have the list of tracks and Spotify Link is available to go to listen on spotify
 
