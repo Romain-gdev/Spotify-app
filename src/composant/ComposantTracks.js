@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Table, Button, notification } from 'antd';
+import { Table, Button } from 'antd';
+import { addBookmark } from '../actions';
 
 /***
  * Get tracks data
@@ -112,7 +113,7 @@ function parseData(tab){
             title:'Favorite',
             dataIndex:'id',
             key:'explicit',
-            render: (item) => <Button type="dashed">Add</Button>
+            render: (item) => <Button type="dashed" onClick={() => addBookmark(item)}>Add</Button>
         }
     ]
 

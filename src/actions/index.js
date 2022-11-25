@@ -6,7 +6,7 @@ export const addBookmark = ({ title, url }) => ({
     id: 4,
     title,
     url
-  }
+  },
 });
 
 export const deleteBookmark = (id) => ({
