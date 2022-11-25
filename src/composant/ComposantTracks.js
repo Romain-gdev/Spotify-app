@@ -120,7 +120,7 @@ function parseData(tab){
         <div>
         {albums &&         
             <div className="mt-16">
-            <Table className="mt-8" dataSource={albums} columns={columns}  pagination={{ pageSize: 20 }}/>
+            <Table className="mt-8 " dataSource={albums} columns={columns}  pagination={{ pageSize: 20 }}/>
          </div >
         }
         </div>

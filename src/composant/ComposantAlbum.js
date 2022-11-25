@@ -28,7 +28,7 @@ function AlbumComposant(){
   }, []);
 
   async function Search() {
-    console.log("search for " + searchInput)
+    
 
     var searchparam = {
       method: 'GET',
@@ -114,7 +114,7 @@ function AlbumComposant(){
           <div className='mx-8 grid grid-cols-9'>
             <div className='col-span-8'> 
             <Input
-              placeholder='hello'
+              placeholder="Your favorite artist's name"
               onChange={event => setSearchInput(event.target.value)}
               onSubmit={ Search }>
             </Input> 

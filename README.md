@@ -21,6 +21,11 @@ https://yourlocalhosturl/search/AlbumId
 ```
 >You have the list of tracks and Spotify Link is available to go to listen on spotify
 
+## Frameworks
+
+* [TailWind Css](https://tailwindcss.com/)
+
+
 ### _GAUTIER Romain_ <br>
 
 * _Accepting [Spotify Developer Terms of Service.](https://developer.spotify.com/terms/")_

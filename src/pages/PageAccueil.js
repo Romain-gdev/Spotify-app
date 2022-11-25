@@ -25,7 +25,8 @@ return (
       </Menu>
     </Sider>
     <Layout>
-      <Header className="rounded-full bg-[#292929] text-center text-[#81b71a] font-bold">API SPOTIFY</Header>
+      <Header className="rounded-full bg-[#292929] text-center text-[#81b71a] font-bold">SPOTIFY API</Header>
+      <Content className='mt-8 ml-8 font-bold text-lg'>Welcome to Spotify API, let's search some albums of your favorites artists !</Content>
       <Content><Outlet/></Content>
       <Footer>
         Accepting <a href="https://developer.spotify.com/terms/"><u> Spotify Developer Terms of Service.</u> </a>
