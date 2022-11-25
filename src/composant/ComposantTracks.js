@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Table, Button } from 'antd';
-import NewBookmark from '../component/NewBookMark';
-import store from '../store';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import { Table, Button, notification } from 'antd';
 
 /***
  * Get tracks data
@@ -11,8 +8,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 function PageAlbumInfo(){
     const [accessToken, setToken] = useState();
     const [albums, setAlbum] = useState([]);
-
-     
+         
     var idAlbum = window.location.pathname.substring(8)
 
     useEffect(() => {
@@ -116,7 +112,7 @@ function parseData(tab){
             title:'Favorite',
             dataIndex:'id',
             key:'explicit',
-            render: (item) => <Button type="primary">Add</Button>
+            render: (item) => <Button type="dashed">Add</Button>
         }
     ]
 
