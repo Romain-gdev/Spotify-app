@@ -3,7 +3,8 @@ import '../style/App.css';
 import { Outlet, Link} from 'react-router-dom';
 import {Menu, Layout} from 'antd';
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import Counter from '../features/counter/Counter'
+import AddBookmark from "../containers/AddBookMark";
+import BookmarkList from "../containers/BookMarkList";
 
 /**
  * Représente la page d'acceuil de l'application
@@ -28,6 +29,9 @@ return (
     <Layout>
       <Header className="rounded-full bg-[#292929] text-center text-[#81b71a] font-bold">SPOTIFY API</Header>
       <Content className='mt-8 ml-8 font-bold text-lg'>Welcome to Spotify API, let's search some albums of your favorites artists !</Content>
+      <Content>
+        <AddBookmark/>
+      </Content>
       <Content><Outlet/></Content>
       <Footer>
         Accepting <a href="https://developer.spotify.com/terms/"><u> Spotify Developer Terms of Service.</u> </a>

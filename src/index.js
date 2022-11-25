@@ -7,7 +7,8 @@ import PageAccueil from './pages/PageAccueil'
 import PageAlbums from './pages/PageAlbums'
 import PageInfo from './pages/PageAlbumInfo'
 import { Provider } from 'react-redux'
-import store from './app/store'
+import store from './store'
+
 
 /**
  * Routes of the App

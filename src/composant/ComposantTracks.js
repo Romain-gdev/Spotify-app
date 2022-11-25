@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Table } from 'antd';
-import { useQuery } from '@tanstack/react-query';
+import { Table, Input } from 'antd';
+import NewBookmark from '../component/NewBookMark';
+import store from '../store';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 /***
  * Get tracks data
@@ -75,7 +77,7 @@ function parseData(tab){
      return tab
  
 }
-
+    console.log(albums)
 
     /***
      * Columns of antd Table
@@ -111,12 +113,12 @@ function parseData(tab){
 
         },
         {
-            title:'',
-            dataIndex: 'explicit',
+            title:'Favorite',
+            dataIndex:'id',
             key:'explicit',
-            render: (item) => { if(item.toString() == "true") <p>explicit</p>}
-        }
-
+            render: (item) =>
+              <Input type="button" value='add'/*onClick={NewBookmark(item)}*//>
+        },
     ]
 
     return(

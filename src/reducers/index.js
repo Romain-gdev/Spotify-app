@@ -1,11 +1,11 @@
-import { ADD_SONG, DELETE_SONG } from "../actions/types";
+import { ADD_BOOKMARK, DELETE_BOOKMARK } from "../actions/types";
 
-export default function songReducer(state = [], action) {
+export default function bookmarksReducer(state = [], action) {
   switch (action.type) {
     case ADD_BOOKMARK:
       return [...state, action.payload];
     case DELETE_BOOKMARK:
-      return state.filter((song) => song.id !== action.payload.id);
+      return state.filter((bookmark) => bookmark.id !== action.payload.id);
     default:
       return state;
   }

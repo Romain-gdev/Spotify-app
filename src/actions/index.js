@@ -1,17 +1,17 @@
-import { ADD_SONG, DELETE_SONG } from "./types";
+import { ADD_BOOKMARK, DELETE_BOOKMARK } from "./types";
 
-export const addSong = ({idSong}) => ({
-    type: ADD_SONG,
-    payload: {
-        id: idSong,
+export const addBookmark = ({ title, url }) => ({
+  type: ADD_BOOKMARK,
+  payload: {
+    id: 4,
+    title,
+    url
+  }
+});
 
-    }
-})
-
-export const deleteBookmark = (idSong) => ({
-    type: DELETE_SONG,
-    payload: {
-      idSong
-    }
-  });
-  
+export const deleteBookmark = (id) => ({
+  type: DELETE_BOOKMARK,
+  payload: {
+    id
+  }
+});
