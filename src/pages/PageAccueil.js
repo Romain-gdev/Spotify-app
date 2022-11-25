@@ -18,8 +18,8 @@ function PageAccueil(){
 return (
     <QueryClientProvider client={client} >
   <Layout >
-    <Sider id="menu" className="h-full">
-      <Menu className="h-full bg-[#F0F0F5]" >
+    <Sider id="menu" className="h-full text-[#81b71a]">
+      <Menu className="h-full bg-[#F0F0F5] ">
         <Menu.Item><Link to="/">Accueil</Link></Menu.Item>
         <Menu.Item><Link to="/search">Albums</Link></Menu.Item>
       </Menu>

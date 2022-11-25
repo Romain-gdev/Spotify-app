@@ -23,4 +23,4 @@ https://yourlocalhosturl/search/AlbumId
 
 ### _GAUTIER Romain_ <br>
 
-* _Accepting [Spotify dev license for developpers](https://developer.spotify.com/terms/")_
+* _Accepting [Spotify Developer Terms of Service.](https://developer.spotify.com/terms/")_

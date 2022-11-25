@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
 import { Table } from 'antd';
+import { useQuery } from '@tanstack/react-query';
 
 /***
  * Get tracks data
  * @returns {JSX.Element}
  */
 function PageAlbumInfo(){
-    const [accessToken, setToken] = useState("");
+    const [accessToken, setToken] = useState();
     const [albums, setAlbum] = useState([]);
 
-    console.log(window.location.pathname.substring(8))
+     
     var idAlbum = window.location.pathname.substring(8)
 
     useEffect(() => {
+
         var authParam = {
             method: 'POST',
             headers: {
@@ -22,8 +24,14 @@ function PageAlbumInfo(){
         }
         fetch('https://accounts.spotify.com/api/token', authParam)
             .then(result => result.json())
-            .then(data => setToken(data.access_token));
-    }, [albums === null]);
+            .then(data => setToken(data.access_token))
+           
+    
+    }, []);
+
+    useEffect(() =>{
+        if(accessToken) Search()
+    },[accessToken])
 
     var searchparam = {
         method: 'GET',
@@ -37,32 +45,37 @@ function PageAlbumInfo(){
 
         await fetch('https://api.spotify.com/v1/albums/' + idAlbum + '/tracks', searchparam)
             .then(response => response.json())
-            .then(data => setAlbum(data.items))
+            .then(data => setAlbum(parseData(data.items)))
+        
+
     }
 
-    Search()
-
-    /***
-     * tab to concatenate artists name,
-     * artists tab in [albums] doesn't match with Antd Table
-     * @type {*[]}
-     */
-    var artists = []
-    albums.forEach(element => {if(element.artists) artists.push(element.artists)})
-
-    /**
-     * Concatenate artists name
-     */
-    for(var i = 0;i<artists.length;i++) {
-        var noms = ""
-        if(artists[i].length != 1){
-            artists[i].forEach((element) => {noms += " "+element.name})
-            Object.assign(albums[i],{'artist':noms})
-            console.log(albums)
-        }else{
-            artists[i].forEach((element) => {Object.assign(albums[i],{'artist':element.name})})
-        }
-    }
+/**
+ *  Function to concatenate artists name,
+ * artists tab in [albums] doesn't match with Antd Table
+ * @param {*} tab 
+ * @returns 
+ */
+function parseData(tab){
+    
+     var artists = []
+     tab.forEach(element => {if(element.artists) artists.push(element.artists)})
+ 
+     /**
+      * Concatenate artists name
+      */
+     for(var i = 0;i<artists.length;i++) {
+         var noms = ""
+         if(artists[i].length != 1){
+             artists[i].forEach((element) => {noms += " "+element.name})
+             Object.assign(tab[i],{'artist':noms})
+         }else{
+             artists[i].forEach((element) => {Object.assign(tab[i],{'artist':element.name})})
+         }
+     }
+     return tab
+ 
+}
 
 
     /***
@@ -104,9 +117,14 @@ function PageAlbumInfo(){
     ]
 
     return(
-        <div className="mt-16">
+        <div>
+        {albums &&         
+            <div className="mt-16">
             <Table className="mt-8" dataSource={albums} columns={columns}  pagination={{ pageSize: 20 }}/>
-        </div >
+         </div >
+        }
+        </div>
+
     )
 
 }
