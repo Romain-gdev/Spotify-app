@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Table, Input } from 'antd';
+import { Table, Button } from 'antd';
 import NewBookmark from '../component/NewBookMark';
 import store from '../store';
 import { propTypes } from 'react-bootstrap/esm/Image';
@@ -116,9 +116,8 @@ function parseData(tab){
             title:'Favorite',
             dataIndex:'id',
             key:'explicit',
-            render: (item) =>
-              <Input type="button" value='add'/*onClick={NewBookmark(item)}*//>
-        },
+            render: (item) => <Button type="primary">Add</Button>
+        }
     ]
 
     return(
