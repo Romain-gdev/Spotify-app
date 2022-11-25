@@ -26,6 +26,11 @@ https://yourlocalhosturl/search/AlbumId
 * [TailWind Css](https://tailwindcss.com/)
 
 
-### _GAUTIER Romain_ <br>
-
+## Agreements
 * _Accepting [Spotify Developer Terms of Service.](https://developer.spotify.com/terms/")_
+
+# 
+
+_GAUTIER Romain_ <br>
+
+Student in Computer Science
