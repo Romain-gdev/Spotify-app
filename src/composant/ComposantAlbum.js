@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 /***
  * Get Album data by searching a artist
- * @returns {JSX.Element}
+ * @returns \{JSX.Element}
  */
 function AlbumComposant(){
 
@@ -54,7 +54,7 @@ function AlbumComposant(){
   /**
    * function to add key index in tabs
    * @param tab
-   * @returns new tab with index key
+   * @returns \{new tab with index key}
    */
   const mapdata = (tab) =>{
     for(var i = 0;i<tab.length;i++){
@@ -66,7 +66,7 @@ function AlbumComposant(){
   /**
    * Function to select an image among images array in tab
    * @param images
-   * @returns {JSX.Element|null}
+   * @returns \{JSX.Element|null}
    */
   const renderimages= (images) => {
     if(images[0]){return <Avatar src={images[0].url} />}

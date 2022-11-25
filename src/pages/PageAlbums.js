@@ -4,7 +4,7 @@ import AlbumComposant from '../composant/ComposantAlbum'
 
 /**
  * View for Album
- * @returns < AlbumComposant />
+ * @returns \{\<AlbumComposant/>}
  */
 function PageAlbums(){
 

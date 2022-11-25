@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 /***
  * Get tracks data
- * @returns {JSX.Element}
+ * @returns \{JSX.Element}
  */
 function PageAlbumInfo(){
     const [accessToken, setToken] = useState();
@@ -47,20 +47,19 @@ function PageAlbumInfo(){
             .then(response => response.json())
             .then(data => setAlbum(parseData(data.items)))
         
-
     }
 
 /**
  *  Function to concatenate artists name,
  * artists tab in [albums] doesn't match with Antd Table
  * @param {*} tab 
- * @returns 
+ * @returns \{tab with artist names concatenated}
  */
 function parseData(tab){
     
      var artists = []
      tab.forEach(element => {if(element.artists) artists.push(element.artists)})
- 
+    
      /**
       * Concatenate artists name
       */
@@ -84,11 +83,15 @@ function parseData(tab){
      */
     const columns = [
         {
+            title:'Disc',
+            dataIndex:'disc_number',
+            key:'disc_number'
+        },
+        {
             title:'#',
             dataIndex: 'track_number',
             key:'track_number'
         },
-
         {
             title:'Track',
             dataIndex:'name',
@@ -120,7 +123,7 @@ function parseData(tab){
         <div>
         {albums &&         
             <div className="mt-16">
-            <Table className="mt-8 " dataSource={albums} columns={columns}  pagination={{ pageSize: 20 }}/>
+            <Table className=" " dataSource={albums} columns={columns}  pagination={{ pageSize: 20 }}/>
          </div >
         }
         </div>

@@ -9,10 +9,10 @@ import PageInfo from './pages/PageAlbumInfo'
 
 
 /**
- * Creation des routes de l'application
- * { PageAccueil } L'accueil de notre page
- * { PageAlbums } Les albums a de l'artiste recherché
- * { PageAlbumInfo } Les informations de l'album sur lequel on a cliqué
+ * Routes of the App
+ * { PageAccueil } Home Page
+ * { PageAlbums } Albums of searched Artist
+ * { PageAlbumInfo } Tracks of selected Album
  */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
