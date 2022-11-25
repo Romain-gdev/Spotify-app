@@ -27,7 +27,7 @@ https://yourlocalhosturl/search/{AlbumId}
 
 
 ## Agreements
-* _Accepting [Spotify Developer Terms of Service.](https://developer.spotify.com/terms/")_
+* _Accepting [Spotify Developer Terms of Service.](https://developer.spotify.com/terms/)_
 
 # 
 
