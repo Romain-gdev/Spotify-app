@@ -3,6 +3,7 @@ import '../style/App.css';
 import { Outlet, Link} from 'react-router-dom';
 import {Menu, Layout} from 'antd';
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import Counter from '../features/counter/Counter'
 
 /**
  * Représente la page d'acceuil de l'application

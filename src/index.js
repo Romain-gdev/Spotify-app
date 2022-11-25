@@ -6,7 +6,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import PageAccueil from './pages/PageAccueil'
 import PageAlbums from './pages/PageAlbums'
 import PageInfo from './pages/PageAlbumInfo'
-
+import { Provider } from 'react-redux'
+import store from './app/store'
 
 /**
  * Routes of the App
@@ -17,6 +18,7 @@ import PageInfo from './pages/PageAlbumInfo'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PageAccueil/>}>
@@ -25,6 +27,7 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
