@@ -8,6 +8,7 @@ import PageAlbums from './pages/PageAlbums'
 import PageInfo from './pages/PageAlbumInfo'
 import { Provider } from 'react-redux'
 import store from './store'
+import AddBookMark from './containers/AddBookMark';
 
 
 /**
