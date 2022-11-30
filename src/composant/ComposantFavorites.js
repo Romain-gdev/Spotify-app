@@ -112,11 +112,16 @@ const columns = [
     },
 ]
 
+/**
+ * If we've got 0 favs, then we notice it to the user
+ */
     return (
-        <div>
-            <div className='mt-16'>
-                <Table dataSource={musictrack} columns={columns} pagination={{ pageSize: 20 }}></Table>
-            </div>
+        <div>{
+            musictrack.length != 0 &&             
+        <div className='mt-16'>
+        <Table dataSource={musictrack} columns={columns} pagination={{ pageSize: 20 }}></Table>
+    </div>}
+            <div><h1  className='flex justify-center text-xl' >Oups ! No favs</h1></div>
         </div>
     )
 }

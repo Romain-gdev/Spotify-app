@@ -21,6 +21,9 @@ https://yourlocalhosturl/search/{AlbumId}
 ```
 >You have the list of tracks and Spotify Link is available to go to listen on spotify
 
+>__You can add favorites musics by clicking on add in favs column__<br>
+>_Then go to this url and you will got your favorites musics_
+
 ## Frameworks
 
 * [TailWind Css](https://tailwindcss.com/)
