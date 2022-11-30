@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Table, Button } from 'antd';
 import { addBookmark } from '../actions';
+import {isFavorite, addFavorite} from '../features/counter/counterSlice'
+import { useSelector, useDispatch } from 'react-redux';
 
 /***
  * Get tracks data
@@ -9,10 +11,11 @@ import { addBookmark } from '../actions';
 function PageAlbumInfo(){
     const [accessToken, setToken] = useState();
     const [albums, setAlbum] = useState([]);
-         
+
+    const count = useSelector((state) => state.favorites.value);
+    const dispatch = useDispatch();
+    
     var idAlbum = window.location.pathname.substring(8)
-
-
     useEffect(() => {
 
         var authParam = {
@@ -26,7 +29,6 @@ function PageAlbumInfo(){
             .then(result => result.json())
             .then(data => setToken(data.access_token))
            
-    
     }, []);
 
     useEffect(() =>{
@@ -75,7 +77,6 @@ function parseData(tab){
      return tab
  
 }
-    console.log(albums)
 
     /***
      * Columns of antd Table
@@ -114,7 +115,7 @@ function parseData(tab){
             title:'Favorite',
             dataIndex:'id',
             key:'explicit',
-            render: (item) => <Button type="dashed" onClick={() => addBookmark(item)}>Add</Button>
+            render: (item) => <Button onClick={() => dispatch(addFavorite(item))}>Add</Button>
         }
     ]
 

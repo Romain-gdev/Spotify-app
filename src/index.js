@@ -8,7 +8,7 @@ import PageAlbums from './pages/PageAlbums'
 import PageInfo from './pages/PageAlbumInfo'
 import { Provider } from 'react-redux'
 import store from './store'
-import AddBookMark from './containers/AddBookMark';
+import PageFav from './pages/PageFav';
 
 
 /**
@@ -26,6 +26,7 @@ root.render(
         <Route path="/" element={<PageAccueil/>}>
           <Route path='/search' element={<PageAlbums />}/>
           <Route path='/search/*' element={<PageInfo />}/>
+          <Route path='/favs' element={<PageFav/>} />
         </Route>
       </Routes>
     </BrowserRouter>
