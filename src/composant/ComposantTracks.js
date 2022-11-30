@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Table, Button } from 'antd';
 import { addBookmark } from '../actions';
-import env from 'react-dotenv';
 
 /***
  * Get tracks data
@@ -13,7 +12,6 @@ function PageAlbumInfo(){
          
     var idAlbum = window.location.pathname.substring(8)
 
-    const API_KEY = env.ENV_VAR1
 
     useEffect(() => {
 
