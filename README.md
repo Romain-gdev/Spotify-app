@@ -19,7 +19,7 @@ _To search an Album, enter artist's name_
 ```
 https://yourlocalhosturl/search/{AlbumId}
 ```
->You have the list of tracks and Spotify Link is available to go to listen on spotify
+>You have the list of tracks and Spotify Link is available to listen on spotify
 
 >__You can add favorites musics by clicking on add in favs column__<br>
 * Clicking on Favorites and you go to your favs
