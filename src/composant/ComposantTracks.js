@@ -12,6 +12,8 @@ function PageAlbumInfo(){
          
     var idAlbum = window.location.pathname.substring(8)
 
+    const API_KEY=process.env.NETLIFY_KEY_SPOTIFY
+
     useEffect(() => {
 
         var authParam = {
@@ -19,7 +21,7 @@ function PageAlbumInfo(){
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: 'grant_type=client_credentials&client_id=b5486f3cf799494fb48e8e7228b9867b&client_secret=9832aa914418470abe7f69a18888ee95'
+            body: 'grant_type=client_credentials&client_id=b5486f3cf799494fb48e8e7228b9867b&client_secret='+API_KEY
         }
         fetch('https://accounts.spotify.com/api/token', authParam)
             .then(result => result.json())
