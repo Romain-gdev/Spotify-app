@@ -12,7 +12,7 @@ function PageAlbumInfo(){
          
     var idAlbum = window.location.pathname.substring(8)
 
-    const API_KEY=process.env.NETLIFY_KEY_SPOTIFY
+    const API_KEY=$NETLIFY_KEY_SPOTIFY
 
     useEffect(() => {
 
