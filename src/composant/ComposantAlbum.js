@@ -14,8 +14,6 @@ function AlbumComposant(){
   const [accessToken, setToken] = useState("");
   const [albums, setAlbums] = useState([]);
 
-  const API_KEY=process.env.API_KEY
-
   useEffect(() => {
     var authParam = {
       method: 'POST',

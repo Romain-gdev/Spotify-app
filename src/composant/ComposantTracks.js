@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Table, Button } from 'antd';
-import { addBookmark } from '../actions';
-import {isFavorite, addFavorite} from '../features/counter/counterSlice'
-import { useSelector, useDispatch } from 'react-redux';
+import {addFavorite} from '../features/counter/counterSlice'
+import { useDispatch } from 'react-redux';
 
 /***
  * Get tracks data
@@ -12,7 +11,6 @@ function PageAlbumInfo(){
     const [accessToken, setToken] = useState();
     const [albums, setAlbum] = useState([]);
 
-    const count = useSelector((state) => state.favorites.value);
     const dispatch = useDispatch();
     
     var idAlbum = window.location.pathname.substring(8)

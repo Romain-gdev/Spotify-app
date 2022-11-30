@@ -1,7 +1,7 @@
 import '../style/App.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { Table, Button } from 'antd';
+import { Table } from 'antd';
 
 function Composantfavorites(){
 
@@ -121,7 +121,9 @@ const columns = [
         <div className='mt-16'>
         <Table dataSource={musictrack} columns={columns} pagination={{ pageSize: 20 }}></Table>
     </div>}
-            <div><h1  className='flex justify-center text-xl' >Oups ! No favs</h1></div>
+    {musictrack.length == 0 &&
+        <div><h1  className='flex justify-center text-xl' >Oups ! No favs</h1></div>
+    }
         </div>
     )
 }
