@@ -29,6 +29,10 @@ https://yourlocalhosturl/search/{AlbumId}
 https://yourlocalhosturl/favs
 ```
 
+## External libraries
+
+* [Redux](https://redux.js.org/)
+
 
 ## Frameworks
 
